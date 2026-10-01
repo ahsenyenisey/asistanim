@@ -1,56 +1,62 @@
-# Welcome to your Expo app 👋
+# Asistanım – Kişisel Sekreter AI
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> Mobil Programlama dersi dönem projesi (2026 Güz) · **Proje Yürütücüsü:** Ahsen Yenisey
 
-## Get started
+Not alır, hatırlatır, çok adımlı süreçleri yürütür. Türkçe doğal dilde yazın; asistan (Claude AI ya da çevrimdışı ayrıştırıcı) bunu otomatik olarak nota, hatırlatmaya veya sürece dönüştürür. Veriler cihazda **SQLite** ile saklanır.
 
-1. Install dependencies
+## Özellikler
 
-   ```bash
-   npm install
-   ```
+| | Özellik | Mobil yetenek |
+|---|---|---|
+| 📝 | Notlar: arama, sabitleme, kameradan/galeriden fotoğraf | SQLite, Kamera, Galeri |
+| ⏰ | Hatırlatmalar: tarih-saat seçici, **yerel bildirim**, gecikmiş uyarısı, hızlı erteleme | expo-notifications, DateTimePicker |
+| 🗂️ | Süreçler: adım listesi, ilerleme çubuğu, otomatik tamamlanma | İlişkisel SQLite (FK, transaction) |
+| ✨ | Asistan: "Yarın 15:00 dişçi hatırlat" → hatırlatma; "Not: …", "Süreç: … – adım, adım"; "Bugünümü özetle" | Anthropic SDK (JSON şema çıktısı), SecureStore, TTS |
+| 📅 | Bugün paneli: günün hatırlatmaları, gecikenler, aktif süreçler, son notlar | Odakta yenileme, pull-to-refresh |
+| 💾 | JSON yedekleme / geri yükleme | expo-file-system, expo-sharing |
+| 🌗 | Açık / koyu tema | useColorScheme |
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Kurulum ve Çalıştırma
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
+```
+Telefonunuza **Expo Go** uygulamasını kurup QR kodu okutun (Android: Expo Go, iOS: Kamera).
+
+Diğer komutlar:
+```bash
+npm run typecheck   # TypeScript
+npm run lint        # ESLint
+npm test            # Jest birim testleri
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Claude API (isteğe bağlı)
+Ayarlar → "Anthropic API anahtarı" alanına `sk-ant-…` anahtarınızı girin. Anahtar yalnızca cihazın güvenli deposunda (Keychain/Keystore) tutulur. Anahtar yoksa asistan çevrimdışı kural tabanlı modda çalışır.
 
-### Other setup steps
+> Bu bir öğrenci projesidir: API çağrısı doğrudan cihazdan yapılır. Üretim senaryosunda anahtarın bir arka uç sunucusunda tutulması önerilir.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Proje Yapısı
 
-## Learn more
+```
+src/app/            Expo Router ekranları ((tabs), not/[id], hatirlatma/[id], surec/[id], ayarlar)
+src/components/     Ortak UI bileşenleri
+src/db/             SQLite şema + repository fonksiyonları
+src/services/       notifications · ai (Claude) · speech · secure · backup · actions
+src/utils/          date · nlp (çevrimdışı Türkçe ayrıştırıcı)
+src/__tests__/      Jest testleri
+docs/               Kapsam & iş planı, organizasyon şeması, haftalık raporlar, sunumlar, tanıtım, final raporu
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Ders Teslim Dokümanları
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [01 – Proje Kapsam ve İş Planı](docs/01-Proje-Kapsam-ve-Is-Plani.md)
+- [02 – Ekip Organizasyon Şeması](docs/02-Ekip-Organizasyon-Semasi.md)
+- [03 – Final Raporu (taslak)](docs/03-Final-Raporu.md)
+- [06 – Performans Takip](docs/06-Performans-Takip.md)
+- [Haftalık İlerleme Raporları](docs/haftalik-raporlar/)
+- [1. Tur Sunum](docs/sunumlar/01-Birinci-Tur-Sunum.md) (Marp uyumlu Markdown)
+- [Tanıtım: Blog yazısı](docs/tanitim/blog-yazisi.md) · [YouTube senaryosu](docs/tanitim/youtube-video-senaryosu.md)
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Lisans
+MIT

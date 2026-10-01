@@ -9,12 +9,14 @@
 - Expo SDK 57 ile proje iskeleti kuruldu; Expo Router sekmeli navigasyon, açık/koyu tema.
 - SQLite şeması (`notes`, `reminders`, `processes`, `process_steps`, `chat_messages`, `settings`) ve `PRAGMA user_version` tabanlı migrasyon yazıldı.
 - Tüm modüllerin ilk sürümü kodlandı: Notlar (kamera/galeri), Hatırlatmalar (yerel bildirim), Süreçler (adım listesi), Asistan (Claude API + çevrimdışı Türkçe ayrıştırıcı), Bugün paneli, Ayarlar, JSON yedekleme, TTS.
-- 29 birim testi (Jest) yazıldı; `typecheck`, `lint`, `test` ve Metro paketlemesi hatasız.
+- 36 birim testi (Jest) yazıldı; `typecheck`, `lint`, `test` ve Metro paketlemesi hatasız.
 
 ## Karşılaşılan sorunlar ve çözümler
 - JavaScript regex'inde `\b` Türkçe karakterlerle çalışmadığı için "bugünümü özetle" yakalanamıyordu → sınır kontrolü kaldırıldı, test eklendi.
 - React Compiler lint kuralları `Date.now()`'ın render içinde kullanımını reddetti → yardımcı fonksiyonlara taşındı.
 - Web hedefinde `output: static` (sunucu taraflı render) expo-sqlite worker'ını yükleyemedi → `output: single` ve Metro'ya `.wasm` asset desteği eklendi. Web desteği expo-sqlite tarafında alfa; birincil hedef Android/iOS.
+
+- Gerçek iPhone'da Expo Go testi: resmî `@anthropic-ai/sdk` paketi Hermes'te modül yüklenirken çöktü (`Cannot read property 'BetaToolRunner' of undefined`) → SDK kaldırıldı, Claude Messages API doğrudan `fetch` ile çağrılıyor; 7 yeni test eklendi (toplam 36).
 
 ## Gelecek hafta planı
 - Gerçek Android ve iOS cihazda Expo Go ile test; bildirimlerin arka planda gelmesinin doğrulanması.

@@ -34,7 +34,7 @@ Uygulamanın temel değer önerisi: *"Düşündüğün gibi yaz, gerisini asista
 | F1 | **Notlar** | Başlık + içerik, sabitleme, arama, kamera/galeriden fotoğraf ekleme | SQLite, Kamera, Galeri, FlatList |
 | F2 | **Hatırlatmalar** | Tarih-saat seçimi, yerel bildirim, gecikmiş/tamamlandı durumu, hızlı seçenekler (+1 saat, yarın 09:00) | SQLite, Yerel Bildirimler (expo-notifications), DateTimePicker |
 | F3 | **Süreçler** | Çok adımlı iş akışı; adım ekleme/silme/işaretleme, ilerleme çubuğu, otomatik "tamamlandı" durumu | SQLite (ilişkili tablolar, transaction) |
-| F4 | **Asistan (AI)** | Doğal dil → eylem. Claude API ile yapılandırılmış JSON çıktısı; anahtar yoksa **çevrimdışı kural tabanlı Türkçe ayrıştırıcı** | REST/SDK (Anthropic SDK), SecureStore, sohbet geçmişi (SQLite) |
+| F4 | **Asistan (AI)** | Doğal dil → eylem. Claude API ile yapılandırılmış JSON çıktısı; anahtar yoksa **çevrimdışı kural tabanlı Türkçe ayrıştırıcı** | REST (Claude Messages API, fetch), SecureStore, sohbet geçmişi (SQLite) |
 | F5 | **Bugün paneli** | Günün hatırlatmaları, gecikenler, aktif süreçler, son notlar, sayaçlar | Odak-yenileme, Pull-to-refresh |
 | F6 | **Ayarlar** | Ad, API anahtarı (güvenli depo), model seçimi, sesli yanıt (TTS), bildirim izni kontrolü | SecureStore, expo-speech, izin yönetimi |
 | F7 | **Yedekleme** | Tüm verinin JSON olarak dışa aktarımı (paylaşım menüsü) ve geri yükleme | expo-file-system, expo-sharing, dosya seçici |

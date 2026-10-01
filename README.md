@@ -11,7 +11,7 @@ Not alır, hatırlatır, çok adımlı süreçleri yürütür. Türkçe doğal d
 | 📝 | Notlar: arama, sabitleme, kameradan/galeriden fotoğraf | SQLite, Kamera, Galeri |
 | ⏰ | Hatırlatmalar: tarih-saat seçici, **yerel bildirim**, gecikmiş uyarısı, hızlı erteleme | expo-notifications, DateTimePicker |
 | 🗂️ | Süreçler: adım listesi, ilerleme çubuğu, otomatik tamamlanma | İlişkisel SQLite (FK, transaction) |
-| ✨ | Asistan: "Yarın 15:00 dişçi hatırlat" → hatırlatma; "Not: …", "Süreç: … – adım, adım"; "Bugünümü özetle" | Anthropic SDK (JSON şema çıktısı), SecureStore, TTS |
+| ✨ | Asistan: "Yarın 15:00 dişçi hatırlat" → hatırlatma; "Not: …", "Süreç: … – adım, adım"; "Bugünümü özetle" | Claude Messages API – fetch (JSON şema çıktısı), SecureStore, TTS |
 | 📅 | Bugün paneli: günün hatırlatmaları, gecikenler, aktif süreçler, son notlar | Odakta yenileme, pull-to-refresh |
 | 💾 | JSON yedekleme / geri yükleme | expo-file-system, expo-sharing |
 | 🌗 | Açık / koyu tema | useColorScheme |

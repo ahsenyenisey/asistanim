@@ -17,7 +17,7 @@ Asistanım; not alma, hatırlatma ve çok adımlı süreç takibini doğal dil a
 | Hatırlatmalar + yerel bildirim | ✔ | ✔ | |
 | Süreçler (adım listesi, ilerleme) | ✔ | ✔ | |
 | Asistan – Claude API yapılandırılmış çıktı | ✔ | ✔ | |
-| Asistan – çevrimdışı Türkçe ayrıştırıcı | ✔ | ✔ | 29 birim testi |
+| Asistan – çevrimdışı Türkçe ayrıştırıcı | ✔ | ✔ | 36 birim testi |
 | Bugün paneli | ✔ | ✔ | |
 | Ayarlar, SecureStore, TTS | ✔ | ✔ | |
 | JSON yedekleme / geri yükleme | ✔ | ✔ | |
@@ -40,7 +40,7 @@ settings(key, value)
 ## 6. Test ve Kalite
 - `npm run typecheck` (TypeScript strict) – geçti
 - `npm run lint` (ESLint + React Compiler kuralları) – geçti
-- `npm test` – 29/29 geçti
+- `npm test` – 36/36 geçti
 - Cihaz testleri: (doldurulacak – Android/iOS model, OS sürümü, sonuçlar)
 
 ## 7. Haftalık İlerleme Raporları

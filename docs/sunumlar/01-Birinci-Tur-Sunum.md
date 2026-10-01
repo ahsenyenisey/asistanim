@@ -56,8 +56,8 @@ github.com/ahsenyenisey/asistanim
 - **Expo Router** (dosya tabanlı navigasyon, sekmeler)
 - **expo-sqlite** (WAL, `user_version` migrasyonu)
 - **expo-notifications**, **expo-image-picker**, **expo-speech**, **expo-secure-store**
-- **Anthropic SDK** – yapılandırılmış JSON çıktı (`json_schema`)
-- **Jest** – 29 birim testi · ESLint · tsc
+- **Claude Messages API** (fetch) – yapılandırılmış JSON çıktı (`json_schema`)
+- **Jest** – 36 birim testi · ESLint · tsc
 
 ---
 

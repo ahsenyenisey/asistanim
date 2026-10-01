@@ -57,7 +57,7 @@ github.com/ahsenyenisey/asistanim
 - **expo-sqlite** (WAL, `user_version` migrasyonu)
 - **expo-notifications**, **expo-image-picker**, **expo-speech**, **expo-secure-store**
 - **Anthropic SDK** – yapılandırılmış JSON çıktı (`json_schema`)
-- **Jest** – 19 birim testi · ESLint · tsc
+- **Jest** – 29 birim testi · ESLint · tsc
 
 ---
 
